@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:layout_collapseMode="pin" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hiszpański dziennik informuje, iż James Rodriguez może opuścić Real Madryt i przenieść się do Premier League, ponieważ nie jest zadowolony ze swojej roli w ekipie Królewskich."
+                android:textColor="#424242"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/descriptionTextView"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Rodriguez trafił na Santiago Bernabeu po mistrzostwach świata w 2014 roku za 56 milionów funtów. Cena wykupu zawodnika wynosi obecnie 80 milionów euro i jeżeli któryś z klubów będzie w stanie wyłożyć taką sumę, decyzja dotycząca transferu będzie zależała wyłącznie od samego zainteresowanego. A parol na Kolumbijczyka zagiął m.in: Manchester United, Chelsea, West Ham United czy PSG. Mówi się jednak, że najbliżej pomocnikowi na Wyspy Brytyjskie.
+
+24-latek w sezonie 2015/16 wystąpił w 26 meczach w Primera Division. Strzelił w nich siedem goli.Rodriguez trafił na Santiago Bernabeu po mistrzostwach świata w 2014 roku za 56 milionów funtów. Cena wykupu zawodnika wynosi obecnie 80 milionów euro i jeżeli któryś z klubów będzie w stanie wyłożyć taką sumę, decyzja dotycząca transferu będzie zależała wyłącznie od samego zainteresowanego. A parol na Kolumbijczyka zagiął m.in: Manchester United, Chelsea, West Ham United czy PSG. Mówi się jednak, że najbliżej pomocnikowi na Wyspy Brytyjskie.
+
+24-latek w sezonie 2015/16 wystąpił w 26 meczach w Primera Division. Strzelił w nich siedem goli i zanotował osiem asyst."
+                android:textColor="#999"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
