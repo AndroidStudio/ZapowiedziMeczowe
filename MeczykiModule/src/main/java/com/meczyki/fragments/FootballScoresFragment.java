@@ -21,18 +21,10 @@ import java.util.ArrayList;
 /**
  * Created by Przemysław Skitał on 2016-07-17.
  */
-public class MainFragment extends BaseFragment {
+public class FootballScoresFragment extends BaseFragment {
     private MainRecyclerViewAdapter mainRecyclerViewAdapter;
     private MainHtmlParseTask mainHtmlParseTask;
-    private int boxIndex;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Bundle bundle = getArguments();
-        this.boxIndex = bundle.getInt(Constants.BOX_INDEX);
-    }
-
+ 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -54,8 +46,8 @@ public class MainFragment extends BaseFragment {
     }
 
     private void onDownloadMatchPreviews() {
-        onResetHtmlPrseTask();
-        this.mainHtmlParseTask = new MainHtmlParseTask(this.boxIndex) {
+        onResetHtmlParseTask();
+        this.mainHtmlParseTask = new MainHtmlParseTask() {
 
             @Override
             protected void onPreExecute() {
@@ -73,7 +65,7 @@ public class MainFragment extends BaseFragment {
         this.mainHtmlParseTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
-    private void onResetHtmlPrseTask() {
+    private void onResetHtmlParseTask() {
         if (this.mainHtmlParseTask != null && this.mainHtmlParseTask.getStatus() != AsyncTask.Status.FINISHED) {
             this.mainHtmlParseTask.cancel(true);
         }
@@ -82,6 +74,6 @@ public class MainFragment extends BaseFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        onResetHtmlPrseTask();
+        onResetHtmlParseTask();
     }
 }

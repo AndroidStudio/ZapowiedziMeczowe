@@ -5,7 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.meczyki.fragments.MainFragment;
+import com.meczyki.fragments.FootballPreviewsFragment;
+import com.meczyki.fragments.FootballScoresFragment;
 import com.meczyki.utils.Constants;
 
 import java.util.ArrayList;
@@ -19,26 +20,18 @@ public class MainViewPageAdapter extends FragmentPagerAdapter {
 
     public MainViewPageAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
-        this.fragmentTitleList.add("Ostatnie mecze");
         this.fragmentTitleList.add("Zapowiedzi meczowe");
+        this.fragmentTitleList.add("Ostatnie mecze");
     }
 
     @Override
     public Fragment getItem(int position) {
         switch (position) {
             case 0: {
-                MainFragment mainFragment = new MainFragment();
-                Bundle bundle = new Bundle();
-                bundle.putInt(Constants.BOX_INDEX, position);
-                mainFragment.setArguments(bundle);
-                return mainFragment;
+                return new FootballPreviewsFragment();
             }
             case 1: {
-                MainFragment mainFragment = new MainFragment();
-                Bundle bundle = new Bundle();
-                bundle.putInt(Constants.BOX_INDEX, 2);
-                mainFragment.setArguments(bundle);
-                return mainFragment;
+                return new FootballScoresFragment();
             }
             default:
                 return null;

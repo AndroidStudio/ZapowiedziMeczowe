@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Meczyki</string>
-    <string name="empty">\"\"</string>
+    <string name="app_name">Football previews</string>
+    <string name="app_title"><b>FOOTBALL PREVIEWS</b></string>
+
 </resources>
